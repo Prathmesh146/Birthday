@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="sheen-layer"></div>
+  
+  <div id="app">
+    <!-- Background shared elements -->
+    <div class="step-layer" id="shared-layer">
+       <div class="split-view">
+          <div class="person-container left">
+             <div class="frame-tilt" style="transform: rotateY(3deg);">
+               <div class="frame"></div>
+             </div>
+             <div class="caption-pill" id="left-name"></div>
+             <div class="text-card" id="left-wishes-card">
+                <p id="left-wishes-m"></p>
+                <p id="left-wishes-e" style="font-size: clamp(1rem, 1.5vw, 1.5rem); font-style: italic; opacity: 0.8;"></p>
+             </div>
+             <div class="piano-keyboard"></div>
+          </div>
+          <div class="person-container right">
+             <div class="frame-tilt" style="transform: rotateY(-3deg); position: relative;">
+               <div class="viewfinder-bracket bracket-tl"></div>
+               <div class="viewfinder-bracket bracket-tr"></div>
+               <div class="viewfinder-bracket bracket-bl"></div>
+               <div class="viewfinder-bracket bracket-br"></div>
+               <div class="frame"></div>
+             </div>
+             <div class="caption-pill" id="right-name"></div>
+             <div class="text-card" id="right-wishes-card">
+                <p id="right-wishes-m"></p>
+                <p id="right-wishes-e" style="font-size: clamp(1rem, 1.5vw, 1.5rem); font-style: italic; opacity: 0.8;"></p>
+             </div>
+          </div>
+       </div>
+    </div>
+
+    <!-- Steps overlay -->
+    <div class="step-layer active" id="step-0">
+      <div class="center-text-container" style="background: none; box-shadow: none;">
+        <p style="opacity: 0.5; font-family: var(--font-sans);">Press SPACE to begin</p>
+      </div>
+    </div>
+    
+    <div class="step-layer" id="step-1">
+      <div class="center-text-container">
+        <h1><span id="title-marathi"></span></h1>
+        <h1><span id="title-english" style="font-family: var(--font-sans); color: var(--text-accent-left);"></span></h1>
+      </div>
+    </div>
+    
+    <!-- Step 2 & 3 are handled via shared layer classes -->
+    <div class="step-layer" id="step-2"></div>
+    <div class="step-layer" id="step-3"></div>
+    
+    <div class="step-layer" id="step-4">
+      <div class="center-text-container">
+        <h2><span id="step-4-heading-e" style="font-family: var(--font-sans);"></span></h2>
+        <h2><span id="step-4-heading-m"></span></h2>
+        <div class="prints-container" id="prints-container"></div>
+      </div>
+    </div>
+    
+    <div class="step-layer" id="step-5">
+      <div class="center-text-container">
+        <p id="step-5-text-m"></p>
+        <p id="step-5-text-e" style="font-family: var(--font-sans); font-style: italic; opacity: 0.8;"></p>
+      </div>
+    </div>
+    
+    <div class="step-layer" id="step-6">
+      <div class="big-dialog-card">
+         <div class="script-reveal">
+           <h1 id="step-6-main"></h1>
+         </div>
+         <h2 id="step-6-marathi" class="fade-up-1"></h2>
+         <div class="gradient-line fade-up-1"></div>
+         <p id="step-6-names" class="fade-up-2"></p>
+      </div>
+    </div>
+    
+    <div class="step-layer" id="step-7">
+      <div class="center-text-container" style="z-index: 10;">
+        <h1><span id="step-7-text-m"></span></h1>
+        <h1><span id="step-7-text-e" style="font-family: var(--font-sans); color: var(--text-accent-left);"></span></h1>
+        <p id="step-7-sig" style="margin-top: var(--space-md); font-size: 1.5rem;"></p>
+      </div>
+    </div>
+    
+    <div class="progress-container">
+       <div class="dots">
+         <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+         <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+       </div>
+       <div class="hint">Space ▸ next</div>
+    </div>
+  </div>
+  
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+  
+  <script src="js/config.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/slideshow.js"></script>
+  <script src="js/steps.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

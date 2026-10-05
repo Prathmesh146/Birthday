@@ -1,0 +1,38 @@
+:root {
+  /* Colors */
+  --bg-left: #bff0cf;
+  --bg-center: #7fe3ea;
+  --bg-right: #a9d4ff;
+
+  --text-main: #0b2a3a;
+  --text-accent-left: #0e7490;
+  --text-accent-right: #1d4ed8;
+
+  --panel-bg: rgba(255, 255, 255, 0.6);
+  --frame-border: rgba(255, 255, 255, 0.8);
+  --frame-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 20px 40px rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --font-script: "Great Vibes", "Segoe Script", "Snell Roundhand", "Apple Chancery", "Brush Script MT", "Lucida Handwriting", cursive;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Noto Serif Devanagari", "Mangal", "Nirmala UI", "Kokila", Georgia, serif;
+
+  /* Spacing */
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+
+  /* Animations */
+  --ease-spring: cubic-bezier(.22, 1, .36, 1);
+  --ease-in-out: ease-in-out;
+  --duration-fast: 0.3s;
+  --duration-normal: 1.4s;
+  --duration-slow: 8s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-normal: 0.1s;
+    --ease-spring: linear;
+  }
+}
